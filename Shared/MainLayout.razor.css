@@ -9,12 +9,11 @@ main {
 }
 
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-color: var(--secondary);
 }
 
 .top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
+    background-color: var(--background);
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;
@@ -54,12 +53,18 @@ main {
     .page {
         flex-direction: row;
     }
+    .sidebar:hover {
+        width: 250px;
+    }
 
     .sidebar {
-        width: 250px;
+        width: 70px;
         height: 100vh;
         position: sticky;
         top: 0;
+    }
+    .link-text {
+        display: none;
     }
 
     .top-row {
