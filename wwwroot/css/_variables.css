@@ -1,0 +1,10 @@
+:root {
+}
+
+:root[theme="light"] {
+    --background: var(--milky-brown);
+}
+
+:root[theme="dark"] {
+    --background: var(--dark-brown);
+}

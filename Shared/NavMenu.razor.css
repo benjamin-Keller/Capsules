@@ -4,7 +4,6 @@
 
 .top-row {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
 }
 
 .navbar-brand {
@@ -20,16 +19,7 @@
 
 .nav-item {
     font-size: 0.9rem;
-    padding-bottom: 0.5rem;
 }
-
-    .nav-item:first-of-type {
-        padding-top: 1rem;
-    }
-
-    .nav-item:last-of-type {
-        padding-bottom: 1rem;
-    }
 
     .nav-item ::deep a {
         color: #d7d7d7;
@@ -40,17 +30,26 @@
         line-height: 3rem;
     }
 
-.nav-item ::deep a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
-}
+        .nav-item ::deep a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: white;
+        }
 
-.nav-item ::deep a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-}
+        .nav-item ::deep a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
 
 @media (min-width: 641px) {
+    .Nav-Menu__link-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-item:first-of-type {
+        padding-top: 1rem;
+    }
+
     .navbar-toggler {
         display: none;
     }
@@ -58,5 +57,61 @@
     .collapse {
         /* Never collapse the sidebar for wide screens */
         display: block;
+    }
+
+    .sidebar .link-text {
+        display: none;
+    }
+
+    .sidebar:not(:hover) .nav-item .oi {
+        width: auto;
+    }
+
+    .sidebar:hover .link-text {
+        display: block !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--secondary);
+    }
+
+    .navbar-brand,
+    .navbar-toggler {
+        display: none;
+    }
+
+    .Nav-Menu__link-wrapper {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 56px;
+        display: flex;
+        align-items: center;
+    }
+
+        .Nav-Menu__link-wrapper > nav {
+            flex-direction: row !important;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+    .sidebar .nav-item .oi {
+        width: auto;
+    }
+
+    .nav-item ::deep a:is(.active, :hover, :focus-visible) {
+        border-radius: 50%;
+    }
+
+    .sidebar .link-text {
+        display: none !important;
     }
 }
