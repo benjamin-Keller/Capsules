@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Capsules.Data;
+using Blazored.LocalStorage;
+using Blazored.SessionStorage;
 
 namespace Capsules;
 
@@ -22,8 +24,16 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		builder.Services.AddSingleton<WeatherForecastService>();
+		ConfigureMiddleware(builder);
+
+        builder.Services.AddSingleton<WeatherForecastService>();
 
 		return builder.Build();
 	}
+
+	public static void ConfigureMiddleware(MauiAppBuilder builder)
+	{
+        builder.Services.AddBlazoredLocalStorage();
+        builder.Services.AddBlazoredSessionStorage();
+    }
 }
