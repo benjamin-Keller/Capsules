@@ -1,10 +1,13 @@
 :root {
+    --logo-background: var(--milky-brown);
 }
 
-:root[theme="light"] {
-    --background: var(--milky-brown);
-}
+    :root[theme="light"] {
+        --background: var(--milky-brown);
+        --primary-text: var(--primary)
+    }
 
-:root[theme="dark"] {
-    --background: var(--dark-brown);
-}
+    :root[theme="dark"] {
+        --background: var(--dark-brown);
+        --primary-text: var(--secondary)
+    }
