@@ -56,6 +56,7 @@ main {
     }
     .sidebar:hover {
         width: 250px;
+        transition: var(--ease-transition);
     }
 
     .sidebar {

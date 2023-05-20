@@ -69,6 +69,7 @@
 
     .sidebar:hover .link-text {
         display: block !important;
+        transition: var(--ease-transition);
     }
 }
 
