@@ -1,0 +1,14 @@
+.capsule-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+}
+
+@media (max-width: 640px) {
+    .capsule-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
